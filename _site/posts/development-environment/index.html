@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up the Development Environment - potatOS</title>
+    <meta name="description" content="Building an operating system from scratch">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="site-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">$ potatOS</div>
+                <div class="sidebar-description">Building an operating system from scratch</div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/" >~/home</a></li>
+                    <li><a href="/posts" class="active">~/posts</a></li>
+                </ul>
+            </nav>
+
+            <div class="github-links">
+                <h3>GitHub</h3>
+                <a href="https://github.com/yourusername/your-os-repo" class="github-link" target="_blank" rel="noopener">OS Repository</a>
+                <a href="https://github.com/yourusername" class="github-link" target="_blank" rel="noopener">My Profile</a>
+            </div>
+
+            <!-- Table of Contents for posts -->
+            
+            <div class="toc" id="toc">
+                <h3>On This Page</h3>
+                <ul id="toc-list"></ul>
+            </div>
+            
+
+            <button id="theme-toggle" class="theme-toggle">[light]</button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <main>
+                <article class="post">
+    <header class="post-header">
+        <h1>Setting Up the Development Environment</h1>
+        <div class="post-meta">
+            <time datetime="2025-10-18T00:00:00+03:00">
+                2025-10-18
+            </time>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Before diving into OS development, you need a proper development environment.</p>
+
+<h2 id="required-tools">Required Tools</h2>
+
+<p>The essential toolkit includes:</p>
+
+<ul>
+  <li><strong>Cross-compiler</strong>: GCC configured for your target architecture</li>
+  <li><strong>Assembler</strong>: NASM or GAS for assembly code</li>
+  <li><strong>Emulator</strong>: QEMU for testing without real hardware</li>
+  <li><strong>Debugger</strong>: GDB for debugging the kernel</li>
+</ul>
+
+<h2 id="build-system">Build System</h2>
+
+<p>Using Make to automate the build process. The Makefile handles:</p>
+
+<ul>
+  <li>Compiling C and assembly sources</li>
+  <li>Linking the kernel binary</li>
+  <li>Creating bootable images</li>
+  <li>Running in QEMU for testing</li>
+</ul>
+
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Basic Makefile structure
+</span><span class="nv">CC</span> <span class="o">=</span> i686-elf-gcc
+<span class="nv">AS</span> <span class="o">=</span> nasm
+<span class="nv">LD</span> <span class="o">=</span> i686-elf-ld
+
+<span class="nl">kernel.bin</span><span class="o">:</span> <span class="nf">boot.o kernel.o</span>
+	<span class="p">$(</span>LD<span class="p">)</span> <span class="nt">-o</span> <span class="nv">$@</span> <span class="nt">-Ttext</span> 0x1000 <span class="nv">$^</span>
+</code></pre></div></div>
+
+<h2 id="testing-workflow">Testing Workflow</h2>
+
+<ol>
+  <li>Write code</li>
+  <li>Compile with <code class="language-plaintext highlighter-rouge">make</code></li>
+  <li>Run in QEMU with <code class="language-plaintext highlighter-rouge">make run</code></li>
+  <li>Debug with <code class="language-plaintext highlighter-rouge">make debug</code></li>
+</ol>
+
+<p>This setup allows rapid iteration without risking real hardware.</p>
+
+    </div>
+</article>
+
+            </main>
+
+            <footer>
+                <p>© 2025 Saeed. All rights reserved.</p>
+                <p>Building an OS from scratch</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/mobile-menu.js"></script>
+    
+    <script src="/assets/js/toc.js"></script>
+    
+</body>
+</html>

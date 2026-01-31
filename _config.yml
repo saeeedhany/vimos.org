@@ -1,0 +1,25 @@
+title: "potatOS"
+logo: "./assets/images/cosmos.png"
+description: "Building an operating system from scratch"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: /posts/:title/
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

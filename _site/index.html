@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>potatOS</title>
+    <meta name="description" content="Building an operating system from scratch">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="site-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">$ potatOS</div>
+                <div class="sidebar-description">Building an operating system from scratch</div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">~/home</a></li>
+                    <li><a href="/posts" >~/posts</a></li>
+                </ul>
+            </nav>
+
+            <div class="github-links">
+                <h3>GitHub</h3>
+                <a href="https://github.com/yourusername/your-os-repo" class="github-link" target="_blank" rel="noopener">OS Repository</a>
+                <a href="https://github.com/yourusername" class="github-link" target="_blank" rel="noopener">My Profile</a>
+            </div>
+
+            <!-- Table of Contents for posts -->
+            
+
+            <button id="theme-toggle" class="theme-toggle">[light]</button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <main>
+                <header>
+    <h1 class="page-title">About This Project</h1>
+</header>
+
+<div class="about-section">
+    <p>
+        This is a documentation site for an operating system being built from scratch.
+        The goal is to understand computing at the lowest level by implementing core OS primitives.
+    </p>
+</div>
+
+<div class="philosophy">
+    <h2>Philosophy</h2>
+    <p>
+        Building an operating system requires understanding every layer of abstraction,
+        from bootloaders to process schedulers. This blog documents that journey.
+    </p>
+    
+    <h3>Principles</h3>
+    <p>
+        Simplicity, minimalism, and learning through implementation.
+        Every component is built to understand how it works, not just to make it work.
+    </p>
+</div>
+
+<h2>Recent Updates</h2>
+<ul class="post-list">
+    
+    <li class="post-item">
+        <h3 class="post-title">
+            <a href="/posts/development-environment/">Setting Up the Development Environment</a>
+        </h3>
+        <div class="post-meta">2025-10-18</div>
+        
+        <div class="post-excerpt">Before diving into OS development, you need a proper development environment.
+</div>
+        
+    </li>
+    
+    <li class="post-item">
+        <h3 class="post-title">
+            <a href="/posts/getting-started-bootloader/">Getting Started with the Bootloader</a>
+        </h3>
+        <div class="post-meta">2025-01-30</div>
+        
+        <div class="post-excerpt">This is an example post showing how to document OS development progress.
+</div>
+        
+    </li>
+    
+    <li class="post-item">
+        <h3 class="post-title">
+            <a href="/posts/memory-management-basics/">Memory Management Basics</a>
+        </h3>
+        <div class="post-meta">2025-01-28</div>
+        
+        <div class="post-excerpt">Understanding memory management is crucial for OS development. This post covers the fundamentals.
+</div>
+        
+    </li>
+    
+</ul>
+
+            </main>
+
+            <footer>
+                <p>© 2025 Saeed. All rights reserved.</p>
+                <p>Building an OS from scratch</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/mobile-menu.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="site-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">$ {{ site.title }}</div>
+                <div class="sidebar-description">{{ site.description }}</div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>~/home</a></li>
+                    <li><a href="{{ '/posts' | relative_url }}" {% if page.url == '/posts/' or page.layout == 'post' %}class="active"{% endif %}>~/posts</a></li>
+                </ul>
+            </nav>
+
+            <div class="github-links">
+                <h3>GitHub</h3>
+                <a href="https://github.com/yourusername/your-os-repo" class="github-link" target="_blank" rel="noopener">OS Repository</a>
+                <a href="https://github.com/yourusername" class="github-link" target="_blank" rel="noopener">My Profile</a>
+            </div>
+
+            <!-- Table of Contents for posts -->
+            {% if page.layout == 'post' %}
+            <div class="toc" id="toc">
+                <h3>On This Page</h3>
+                <ul id="toc-list"></ul>
+            </div>
+            {% endif %}
+
+            <button id="theme-toggle" class="theme-toggle">[light]</button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <main>
+                {{ content }}
+            </main>
+
+            <footer>
+                <p>© 2025 Saeed. All rights reserved.</p>
+                <p>Building an OS from scratch</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/mobile-menu.js' | relative_url }}"></script>
+    {% if page.layout == 'post' %}
+    <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+    {% endif %}
+</body>
+</html>

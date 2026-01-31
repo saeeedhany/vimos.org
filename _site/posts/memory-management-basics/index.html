@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Management Basics - potatOS</title>
+    <meta name="description" content="Building an operating system from scratch">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="site-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">$ potatOS</div>
+                <div class="sidebar-description">Building an operating system from scratch</div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/" >~/home</a></li>
+                    <li><a href="/posts" class="active">~/posts</a></li>
+                </ul>
+            </nav>
+
+            <div class="github-links">
+                <h3>GitHub</h3>
+                <a href="https://github.com/yourusername/your-os-repo" class="github-link" target="_blank" rel="noopener">OS Repository</a>
+                <a href="https://github.com/yourusername" class="github-link" target="_blank" rel="noopener">My Profile</a>
+            </div>
+
+            <!-- Table of Contents for posts -->
+            
+            <div class="toc" id="toc">
+                <h3>On This Page</h3>
+                <ul id="toc-list"></ul>
+            </div>
+            
+
+            <button id="theme-toggle" class="theme-toggle">[light]</button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <main>
+                <article class="post">
+    <header class="post-header">
+        <h1>Memory Management Basics</h1>
+        <div class="post-meta">
+            <time datetime="2025-01-28T00:00:00+02:00">
+                2025-01-28
+            </time>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Understanding memory management is crucial for OS development. This post covers the fundamentals.</p>
+
+<h2 id="physical-vs-virtual-memory">Physical vs Virtual Memory</h2>
+
+<p>Physical memory is the actual RAM installed in the system. Virtual memory provides an abstraction layer that allows each process to have its own address space.</p>
+
+<h3 id="key-concepts">Key Concepts</h3>
+
+<ul>
+  <li>Page tables map virtual to physical addresses</li>
+  <li>The MMU (Memory Management Unit) handles address translation</li>
+  <li>Each process sees a continuous address space</li>
+</ul>
+
+<h2 id="implementation-strategy">Implementation Strategy</h2>
+
+<p>The memory manager needs to:</p>
+
+<ol>
+  <li>Track free and allocated memory blocks</li>
+  <li>Implement page allocation/deallocation</li>
+  <li>Handle page faults</li>
+  <li>Manage the page table structure</li>
+</ol>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Simple page allocator structure</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">base_address</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">total_pages</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">bitmap</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">page_allocator_t</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="challenges">Challenges</h2>
+
+<ul>
+  <li>Fragmentation (both internal and external)</li>
+  <li>Efficient allocation algorithms</li>
+  <li>Handling out-of-memory conditions</li>
+  <li>Supporting different page sizes</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Implement a buddy allocator system for efficient memory management.</p>
+
+    </div>
+</article>
+
+            </main>
+
+            <footer>
+                <p>© 2025 Saeed. All rights reserved.</p>
+                <p>Building an OS from scratch</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/mobile-menu.js"></script>
+    
+    <script src="/assets/js/toc.js"></script>
+    
+</body>
+</html>
