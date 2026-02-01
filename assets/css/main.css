@@ -97,7 +97,8 @@ body {
 }
 
 .sidebar-overlay {
-    display: none;
+    display: block;
+    pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -111,6 +112,7 @@ body {
 
 .sidebar-overlay.active {
     opacity: 1;
+    pointer-events: all;
 }
 
 .sidebar-header {
@@ -458,7 +460,7 @@ footer p {
     }
     
     .sidebar-overlay {
-        display: block;
+        opacity: 0;
     }
 
     header {
