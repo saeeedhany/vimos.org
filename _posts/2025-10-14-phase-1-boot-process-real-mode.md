@@ -10,8 +10,6 @@ After re-studying the entire boot process and reading multiple references, I sta
 
 This phase represents my first real step into the OS development journey. It may look small in terms of code, but conceptually, it required a lot of thinking and re-reading to truly understand what is happening under the hood.
 
----
-
 ## Phase One — What Really Happens Before the Kernel
 
 When the user presses the power button, the process does **not** start with our code directly. Instead, a well-defined hardware-controlled sequence begins.
@@ -27,8 +25,6 @@ When the user presses the power button, the process does **not** start with our 
    - Verifies system integrity
 5. After POST completes, the BIOS searches for a **bootable device**
 
----
-
 ## Boot Sector & Bootloader Loading
 
 Once a bootable device is found:
@@ -38,8 +34,6 @@ Once a bootable device is found:
 - The CPU then jumps to this address and starts executing the bootloader code
 
 From this point on, **everything that happens depends entirely on the bootloader**.
-
----
 
 ## Real Mode Constraints
 
@@ -79,8 +73,6 @@ Far Jump to 32-bit mode
 
 ![Study Board Diagram]({{ '/assets/images/board.webp' | relative_url }})
 
----
-
 ## Bootloader Mission
 
 The mission of the bootloader is **not** to implement complex logic. Its responsibility is to **prepare the environment for the kernel**.
@@ -104,8 +96,6 @@ bootloader.asm
 
 > **Note:**
 > I will explain each part in detail *after* finishing the full bootloader implementation. The goal is to understand every step practically, not just theoretically.
-
----
 
 ## First Working Bootloader Code
 
