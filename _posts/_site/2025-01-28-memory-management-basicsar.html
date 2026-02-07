@@ -1,0 +1,45 @@
+<p>Understanding memory management is crucial for OS development. This post covers the fundamentals.</p>
+
+<h2 id="physical-vs-virtual-memory">Physical vs Virtual Memory</h2>
+
+<p>Physical memory is the actual RAM installed in the system. Virtual memory provides an abstraction layer that allows each process to have its own address space.</p>
+
+<h3 id="key-concepts">Key Concepts</h3>
+
+<ul>
+  <li>Page tables map virtual to physical addresses</li>
+  <li>The MMU (Memory Management Unit) handles address translation</li>
+  <li>Each process sees a continuous address space</li>
+</ul>
+
+<h2 id="implementation-strategy">Implementation Strategy</h2>
+
+<p>The memory manager needs to:</p>
+
+<ul>
+  <li>Track free and allocated memory blocks</li>
+  <li>Implement page allocation/deallocation</li>
+  <li>Handle page faults</li>
+  <li>Manage the page table structure</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Simple page allocator structure</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">base_address</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">total_pages</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">bitmap</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">page_allocator_t</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="challenges">Challenges</h2>
+
+<ul>
+  <li>Fragmentation (both internal and external)</li>
+  <li>Efficient allocation algorithms</li>
+  <li>Handling out-of-memory conditions</li>
+  <li>Supporting different page sizes</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Implement a buddy allocator system for efficient memory management.</p>

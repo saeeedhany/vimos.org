@@ -1,0 +1,43 @@
+<p>Before diving into OS development, you need a proper development environment.</p>
+
+<h2 id="required-tools">Required Tools</h2>
+
+<p>The essential toolkit includes:</p>
+
+<ul>
+  <li><strong>Cross-compiler</strong>: GCC configured for your target architecture</li>
+  <li><strong>Assembler</strong>: NASM or GAS for assembly code</li>
+  <li><strong>Emulator</strong>: QEMU for testing without real hardware</li>
+  <li><strong>Debugger</strong>: GDB for debugging the kernel</li>
+</ul>
+
+<h2 id="build-system">Build System</h2>
+
+<p>Using Make to automate the build process. The Makefile handles:</p>
+
+<ul>
+  <li>Compiling C and assembly sources</li>
+  <li>Linking the kernel binary</li>
+  <li>Creating bootable images</li>
+  <li>Running in QEMU for testing</li>
+</ul>
+
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Basic Makefile structure
+</span><span class="nv">CC</span> <span class="o">=</span> i686-elf-gcc
+<span class="nv">AS</span> <span class="o">=</span> nasm
+<span class="nv">LD</span> <span class="o">=</span> i686-elf-ld
+
+<span class="nl">kernel.bin</span><span class="o">:</span> <span class="nf">boot.o kernel.o</span>
+	<span class="nv">$(LD)</span> <span class="nt">-o</span> <span class="nv">$@</span> <span class="nt">-Ttext</span> 0x1000 <span class="nv">$^</span>
+</code></pre></div></div>
+
+<h2 id="testing-workflow">Testing Workflow</h2>
+
+<ul>
+  <li>Write code</li>
+  <li>Compile with <code class="language-plaintext highlighter-rouge">make</code></li>
+  <li>Run in QEMU with <code class="language-plaintext highlighter-rouge">make run</code></li>
+  <li>Debug with <code class="language-plaintext highlighter-rouge">make debug</code></li>
+</ul>
+
+<p>This setup allows rapid iteration without risking real hardware.</p>
