@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Notes"
+title: "About & Sources"
 date: 2026-02-06
 ---
 
@@ -34,6 +34,12 @@ And i also was reading these books :
 - [Operating Systems: From 0 to 1](https://github.com/saeeedhany/references/blob/main/OS/Operating%20Systems%20-%20Three%20Easy%20Pieces.pdf)
 - [Operating Systems: Three Easy Pieces](https://github.com/saeeedhany/references/blob/main/OS/Operating_Systems_From_0_to_1.pdf)
 - [The Little Book About OS Development](https://github.com/saeeedhany/references/blob/main/OS/book.pdf)
+
+And lately I've known another good book from It's author named [Mohammed Q. Hussain](https://github.com/MaaSTaaR) With it's book :
+
+- [A Journey in Creating an Operating System Kernel](https://github.com/saeeedhany/references/blob/main/OS/A_Journey_in_Creating_an_Operating_System_Kernel_The_539kernel_Book.pdf)
+
+> I am actually reading it because it's funny and i really loved his writting way, It's so smooth and direct.
 
 ## Some Thoughts
 
