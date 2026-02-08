@@ -399,6 +399,185 @@ body {
     text-decoration: none;
 }
 
+/* Consistent max-width for all pages */
+.site-wrapper,
+.post-layout {
+    max-width: 1480px;
+    margin: 0 auto;
+}
+
+/* Default two-column layout (sidebar + content) */
+.site-wrapper {
+    display: flex;
+}
+
+.site-wrapper .sidebar {
+    width: 280px;
+}
+
+.site-wrapper .main-content {
+    flex: 1;
+    padding: 24px 48px;
+    min-width: 0;
+    max-width: 900px; /* Consistent width */
+}
+
+/* Three-column layout for posts/notes ONLY */
+.post-layout {
+    display: flex;
+    position: relative;
+}
+
+.post-layout .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.post-layout .main-content {
+    flex: 1;
+    padding: 24px 48px;
+    min-width: 0;
+    max-width: 900px; /* SAME as other pages */
+}
+
+/* Right TOC - positioned to the right of main-content */
+.right-toc {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 24px;
+    height: fit-content;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding: 24px 24px 24px 32px;
+}
+
+.right-toc::-webkit-scrollbar {
+    width: 4px;
+}
+
+.right-toc::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.right-toc h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+}
+
+.right-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.right-toc li {
+    margin-bottom: 0;
+}
+
+.right-toc a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 6px 0 6px 12px;
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.right-toc a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+}
+
+.right-toc a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    font-weight: 500;
+}
+
+/* Nested headings (h3 under h2) */
+.right-toc ul ul {
+    margin-left: 12px;
+    margin-top: 4px;
+}
+
+.right-toc ul ul a {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Hide sidebar TOC on desktop when right TOC is present */
+.post-layout .sidebar .toc {
+    display: none;
+}
+
+/* Tablet - Remove right TOC, show in sidebar */
+@media (max-width: 1280px) {
+    .right-toc {
+        display: none;
+    }
+
+    .post-layout .sidebar .toc {
+        display: block;
+    }
+
+    .post-layout .main-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile - Stack everything */
+@media (max-width: 768px) {
+    .site-wrapper,
+    .post-layout {
+        flex-direction: row;
+    }
+
+    .post-layout .sidebar,
+    .site-wrapper .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+    }
+
+    .post-layout .sidebar.active,
+    .site-wrapper .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .post-layout .main-content,
+    .site-wrapper .main-content {
+        width: 100%;
+        padding: 80px 20px 20px 20px;
+        max-width: 100%;
+    }
+
+    .right-toc {
+        display: none;
+    }
+
+    .post-layout .sidebar .toc {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .post-layout .main-content,
+    .site-wrapper .main-content {
+        padding: 24px 32px;
+    }
+}
+
 .theme-toggle {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border);

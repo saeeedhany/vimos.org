@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "Development Environment"
+title: "Operating System Development Roadmap"
 date: 2026-02-06
 ---
-
-# Operating System Development Roadmap
 
 ## Introduction
 
@@ -13,8 +11,6 @@ This document describes the detailed roadmap for building **potatOS**, a minimal
 The purpose of this roadmap is not only to define *what* will be built, but also *why* each step exists and *how* the system gradually evolves from raw hardware execution into a usable operating system.
 
 The roadmap is divided into phases, where each phase represents a core layer of the operating system and builds directly on top of the previous one.
-
----
 
 ## Core Components Overview
 
@@ -44,8 +40,6 @@ Each of the following components will be implemented progressively throughout th
 
 - **Shell / User Interface**
   Enables user interaction with the operating system.
-
----
 
 ## Development Phases
 
