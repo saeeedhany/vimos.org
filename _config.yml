@@ -1,8 +1,8 @@
-title: "potat"
+title: "vimOS"
 logo: "./assets/images/cosmos.png"
-description: "Building an operating system from scratch"
-baseurl: "/potatos.org"
-url: "https://saeeedhany.github.io"
+description: "A modal-native operating system experiment focused on semantic command interaction"
+baseurl: ""
+url: "https://vimos.org"
 markdown: kramdown
 permalink: /posts/:title/
 
@@ -10,9 +10,6 @@ collections:
   posts:
     output: true
     permalink: /posts/:title/
-  notes:
-    output: true
-    permalink: /notes/:title/
 
 defaults:
   - scope:
@@ -20,15 +17,9 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-      type: "notes"
-    values:
-      layout: "note"
 
 exclude:
   - Gemfile
   - Gemfile.lock
-  - README.md
   - vendor/
   - .bundle/
